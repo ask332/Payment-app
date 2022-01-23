@@ -11,19 +11,19 @@
 					{
 						"indexed": false,
 						"internalType": "address",
-						"name": "sender",
+						"name": "",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "address",
-						"name": "receiver",
+						"name": "",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -54,11 +54,6 @@
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
 					}
 				],
 				"name": "payFriend",
@@ -84,6 +79,10 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -114,11 +113,11 @@
 	},
 	"sources": {
 		"index.sol": {
-			"keccak256": "0x9c032c4d473295ced140f1c0c9b2227c26eb8f53bbbb446d5b1b8fe833787119",
+			"keccak256": "0x273533a38f45a79e27a177f395c3931415933b55f98738dbae5bcde60bb6846a",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://bfada6a51507ca4927b385e45e413840e559b9da97c6903092dbde6658aa5181",
-				"dweb:/ipfs/Qma3kxtm4y12haXkkUDg2Gx1PrWPXeG2d5vZs68VuJnWno"
+				"bzz-raw://feac3b058db2f19ae9bd986f30be9beb4e513932b1174ac03c6d6fec22cf59a7",
+				"dweb:/ipfs/QmbdGoSPxsDTcCE7TuN3tBCEVRLmKLLdPBSacKU6nN6yAh"
 			]
 		}
 	},

@@ -1,22 +1,33 @@
 //SPDX-License-Identifier: UNLICENSED
-pragma solidity >0.7.0 <0.9.0;
+pragma solidity >0.7.0;
 
 contract Friends{
-    address payable private owner;
+    address private owner = msg.sender;
     string[] private names;
-
+//modifier
+    modifier onlyOwner {
+      require(msg.sender == owner);
+      _;
+   }
+//mapping of names and address
     mapping(string => address payable) public paymentOptions;
-    event payment(address sender, address receiver, uint amount);
+//event
+    event payment(address, address , uint);
+//adding new friend
     function addFriend(string memory name, address payable newAddress) public{
         names.push(name);
         paymentOptions[name] = newAddress;
     }
-
-    function payFriend(string memory name, uint amount) public payable{
-        if(msg.sender.balance >= amount){
+//paying friend
+    function payFriend(string memory name) public payable onlyOwner{
+        require(msg.sender.balance >= msg.value);
+            uint amount = msg.value;
             paymentOptions[name].transfer(amount);
-            emit payment(msg.sender, paymentOptions[name], amount);
+            emit payment(owner, paymentOptions[name], amount);    
         }
-
+//fallback function
+    receive() external payable{
+       
     }
+    
 }
